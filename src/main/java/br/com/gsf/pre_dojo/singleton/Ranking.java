@@ -13,7 +13,7 @@ public class Ranking {
 	private static Ranking instance;
 	private Map<String, Integer> murders = new HashMap<String, Integer>();
 	private Map<String, Integer> deaths = new HashMap<String, Integer>();
-	private Player awardPlayer;
+	private Player awardPlayer = new Player();
 	private final static Logger LOGGER = Logger.getLogger(Ranking.class);
 	
 	private Ranking() {}
@@ -50,6 +50,11 @@ public class Ranking {
 		}
 	}
 	
+
+	public Player getAwardPlayer() {
+		return awardPlayer;
+	}
+	
 	public void logRanking() {
 		LOGGER.info("Ranking --------------------------------------");
 		for (Map.Entry<String, Integer> entry : murders.entrySet())	{
@@ -58,9 +63,11 @@ public class Ranking {
 		for (Map.Entry<String, Integer> entry : deaths.entrySet())	{
 			LOGGER.info("nickName: "+ entry.getKey() + " - deaths: " + entry.getValue());
 		}
-		LOGGER.info("nickName: "+ awardPlayer.getNickname() + " has won an award");
+		LOGGER.info(awardPlayer.getNickname() + " has won an award");
 		LOGGER.info("----------------------------------------------");
 	}
+
+
 
 
 	

@@ -41,10 +41,10 @@ public class ApplicationMain {
 		for (int i = 0; i < match.getNumberOfPlayers(); i++) {
 			msg("Enter nickname player #" + (i + 1) + " >>");
 			String nickname = scanner.next();
-			msg("Enter type player (BASIC=1, ADVANTAGE=2) >>");
+			msg("Enter type player (BASIC=1, ADVANCED=2) >>");
 			TypePlayer typePlayer;
 			if (scanner.nextInt() == 2) {
-				typePlayer = TypePlayer.ADVANTAGE;
+				typePlayer = TypePlayer.ADVANCED;
 			} else {
 				typePlayer = TypePlayer.BASIC;
 			}

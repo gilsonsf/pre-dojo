@@ -1,2 +1,69 @@
 Coloque aqui suas instruções ou comentários que ache útil/relevantes para possamos ler 
 quando estivermos avaliando a sua solução
+
+Foi criado uma pequena aplicação utilizando Java 1.7, Maven 3.3, Log4j 1.2 E JUnit 4.4.
+
+Foi utilizado o padrao de projeto MVC para separação das resposabilidade de suas respectivas camadas, onde a View esta sendo representada pela classe
+java.util.Scanner desta forma, os dados são obtidos através do console e delegando para o Controller efetuar a chamada de uma determinada ação.
+O Model é responsável pela Logica de negocio, onde é lá que esta sendo efetuado um fluxo automatico, através de numeros randomicos, 
+que fazem a aplicação funcionar.
+Para obter o Ranking, foi utilizado o padrão de projeto Observer onde em cada alteração efetuada por um jogador os Observadores se encarregam de atualizar
+o Ranking que por sua vez utiliza o padrão de projeto Singleton para garantia de uma unica instância durante o ciclo de vida da aplicação.
+
+Para começar execute a classe br.com.gsf.pre_dojo.ApplicationMain
+A aplicação ira lhe solicitar a quantidade de jogadores e os respectivos dados para cada um. Conforme saida abaixo:
+
+Enter number of players >>4
+Enter nickname player #1 >>ZE
+Enter type player (BASIC=1, ADVANCED=2) >>1
+Enter weapon (M16=1, AK47=2, M4A1=3) #1 >>2
+Enter nickname player #2 >>JOAO
+Enter type player (BASIC=1, ADVANCED=2) >>2
+Enter weapon (M16=1, AK47=2, M4A1=3) #1 >>3
+Enter weapon (M16=1, AK47=2, M4A1=3) #2 >>2
+Enter nickname player #3 >>MANE
+Enter type player (BASIC=1, ADVANCED=2) >>1
+Enter weapon (M16=1, AK47=2, M4A1=3) #1 >>1
+Enter nickname player #4 >>JOSE
+Enter type player (BASIC=1, ADVANCED=2) >>2
+Enter weapon (M16=1, AK47=2, M4A1=3) #1 >>1
+Enter weapon (M16=1, AK47=2, M4A1=3) #2 >>2
+
+O player BASIC pode escolher 1 weapon e tem 3 lives.
+O player ADVANCED pode escolher 2 weapons e tem 3 lives.
+Como pode ser visto no Enum br.com.gsf.pre_dojo.enums.TypePlayer
+
+
+Após os dados informados o sistem é efetuado gerando esta saida:
+
+09/12/2015 11:58:56 - New match 99620878 has started 
+09/12/2015 11:58:56 - ZE killed JOSE using AK47 
+09/12/2015 11:58:56 - <WORLD> killed JOSE by DROWN 
+09/12/2015 11:58:57 - JOAO killed MANE using AK47 
+09/12/2015 11:58:57 - MANE killed JOSE using AK47 
+09/12/2015 11:58:58 - <WORLD> killed MANE by FLOOD 
+09/12/2015 11:58:58 - JOAO killed MANE using AK47 
+09/12/2015 11:58:59 - JOAO killed JOSE using M4A1 
+09/12/2015 11:58:59 - <WORLD> killed JOSE by DROWN 
+09/12/2015 11:59:00 - <WORLD> killed ZE by FIRE 
+09/12/2015 11:59:00 - ZE killed JOAO using AK47 
+09/12/2015 11:59:01 - <WORLD> killed JOAO by DROWN 
+09/12/2015 11:59:01 - JOAO killed ZE using M4A1 
+09/12/2015 11:59:02 - ZE killed JOAO using AK47 
+09/12/2015 11:59:02 - JOAO killed ZE using AK47 
+09/12/2015 11:59:03 - Match 99620878 has ended 
+09/12/2015 11:59:03 - Ranking -------------------------------------- 
+09/12/2015 11:59:03 - nickName: JOAO - murders: 5 
+09/12/2015 11:59:03 - nickName: JOSE - murders: 0 
+09/12/2015 11:59:03 - nickName: MANE - murders: 1 
+09/12/2015 11:59:03 - nickName: ZE - murders: 3 
+09/12/2015 11:59:03 - nickName: JOAO - deaths: 3 
+09/12/2015 11:59:03 - nickName: JOSE - deaths: 5 
+09/12/2015 11:59:03 - nickName: MANE - deaths: 3 
+09/12/2015 11:59:03 - nickName: ZE - deaths: 3 
+09/12/2015 11:59:03 - nickName: JOAO has won an award 
+09/12/2015 11:59:03 - ---------------------------------------------- 
+
+
+A configuração do log esta para a saida no console, porém no arquivo log4j.properties esta comentado a saida para algum arquivo
+

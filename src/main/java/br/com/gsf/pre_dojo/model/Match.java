@@ -62,7 +62,7 @@ public class Match implements Runnable {
 			if(randomMurder != players.size()) {
 				murder = players.get(randomMurder);
 				
-				if (murder.getType() == TypePlayer.ADVANTAGE) {
+				if (murder.getType() == TypePlayer.ADVANCED) {
 					weapon = murder.getWeapons().get(rd.nextInt(3)).getType();
 				} else {
 					weapon = murder.getWeapons().get(0).getType();

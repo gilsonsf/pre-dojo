@@ -1,7 +1,7 @@
 package br.com.gsf.pre_dojo.enums;
 
 public enum TypePlayer {
-	BASIC(3, 1), ADVANTAGE(5, 2);
+	BASIC(3, 1), ADVANCED(5, 2);
 
 	private final int lives;
 	private final int weapons;
